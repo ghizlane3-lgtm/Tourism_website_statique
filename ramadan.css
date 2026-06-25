@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  --bg-image: url("Manfaatkan\ dengan\ Maksimal\,\ Ini\ Amalan\ 10\ Malam\ Terakhir\ Ramadan.jpg"); /* put ONE image here */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+filter: blur(2px);
+  background: var(--bg-image) center / cover no-repeat;
+
+  
+  transform: scale(1.1); /* VERY IMPORTANT */
+  
+  z-index: -1;
+  transition: background-image 0.6s ease-in-out;
+
+}
+.ramadan
+{
+      display: grid;
+    text-align: center;
+    align-items: center;
+}
+
+header
+{
+    color: rgb(247, 241, 241);
+    
+    text-shadow: 5px 5px 5px black, 2px 2px 2px rgb(255, 201, 23);
+
+    font-size: 25px;
+    font-weight: bold;
+    position: relative;
+    top: 300px;
+    left: 200px;
+  
+    
+
+}

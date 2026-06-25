@@ -1,0 +1,87 @@
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  --bg-image: url("home\ bg.jpg"); 
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: var(--bg-image) center / cover no-repeat;
+
+  filter: blur(5px);
+  transform: scale(1.1); /* VERY IMPORTANT */
+  
+  z-index: -1;
+  transition: background-image 0.6s ease-in-out;
+
+}
+
+.reservation-form {
+  max-width: 520px;
+  margin: auto;
+  padding: 40px;
+  background: #0b1c2693;
+  color: #fff;
+  border-radius: 12px;
+}
+
+.reservation-form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.reservation-form label {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  opacity: 1;
+  color: rgb(255, 255, 255);
+}
+
+.reservation-form input,
+.reservation-form select,
+.reservation-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 15px;
+  background-color: #ffffffb6;
+  
+}
+
+.reservation-form textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.reservation-form button {
+  margin-top: 25px;
+  padding: 14px;
+  background: #8106a7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  
+}
+
+.reservation-form button:hover {
+  background: #930db4;
+}
+
+.form-note {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+

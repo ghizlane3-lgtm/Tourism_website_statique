@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation</title>
+     <link rel="icon" type="image/png" href="logo_tourism-removebg-preview.png">
+     <link rel="stylesheet" href="hotel-reservation.css">
+</head>
+<body>
+
+    <form id="reservationForm" class="reservation-form">
+
+  <h2>Hotel Reservation</h2>
+
+  <label for="name">Full Name</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email Address</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="phone">Phone number</label>
+  <input type="tel" id="phone" name="phone" required>
+
+  <label for="room">Room Type</label>
+  <select id="room" name="room" required>
+    <option value="">Select a type</option>
+    <option value="single">Single</option>
+    <option value="shared">Shared</option>
+  </select>
+
+  <label for="guests">Number of Guests</label>
+  <input type="number" id="guests" name="guests" min="1" max="10" required>
+
+  <label for="checkin-date">Check-in Date</label>
+  <input type="date" id="checkin-date" name="checkin_date" required>
+
+  <label for="checkin-time">Check-in Time</label>
+  <input type="time" id="checkin-time" name="checkin_time">
+
+  <label for="nights">Number of Nights</label>
+  <input type="number" id="nights" name="nights" min="1" required>
+
+  <label for="message">Special Requests</label>
+  <textarea id="message" name="message" placeholder="Any special requests..."></textarea>
+
+  <button type="submit" id="submission">Confirm Reservation</button>
+
+  <p class="form-note">
+    We will contact you by email to confirm availability.
+  </p>
+
+</form>
+
+
+ 
+
+
+</body>
+</html>

@@ -1,0 +1,683 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  --bg-image: url("411cd9114fdb777a3cddb7880ce9aca9.jpg"); 
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: var(--bg-image) center / cover no-repeat;
+
+  filter: blur(5px);
+  transform: scale(1.1); /* VERY IMPORTANT */
+  
+  z-index: -1;
+  transition: background-image 0.6s ease-in-out;
+
+}
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: saturate(180%) blur(10px);
+  display: flex;
+  width: 100%;
+  border-radius: 0px 0px 0px 80px  ;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 5px;
+  z-index: 10;
+  color: whitesmoke;
+}
+
+.logo {
+  font-family: var(--ff-rubik-dirt);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  padding: 0 1.2rem;
+  font-weight: 300;
+  color: rgb(254, 252, 252); 
+  
+  
+}
+
+
+/* Global */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+
+.navbar-span {
+  color: #7c7c7c;
+  padding: 0px 40px;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  transition: 0.3s ease;
+  margin: 10px;
+  
+}
+
+.menu-toggle span {
+  width:10px ;
+  height: 3px;
+  
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  z-index: 10;
+}
+
+
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li {
+  font-family: var(--ff-montserrat);
+  margin: 0px 15px;
+}
+
+.nav-links li a {
+  color: white;
+  cursor: pointer;
+}
+
+.cir_border {
+  padding: 6px 20px;
+  font-weight: bold;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.cir_border:hover {
+  border-color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+
+
+#home {
+  max-height: 100vh;
+  padding-top: 80px;
+  padding: 4rem 6vw;
+  align-items: start;
+  position: relative;   
+}
+
+
+.home-text h1 {
+ 
+  margin-top: 50px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
+
+.home-text h1 {
+    text-align: center;
+    font-size:30px;
+     font-weight:300;
+      color:#222;
+     letter-spacing:1px;
+    text-transform: uppercase;
+
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 27px 0;
+    grid-gap: 20px;
+    align-items: center;
+
+}
+
+.home-text h1:after,.home-text h1:before {
+    content: " ";
+    display: block;
+    border-bottom: 1px solid #000000;
+    border-top: 1px solid #000000;
+    height: 5px;
+  
+}
+
+.home-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  opacity: 0.85;
+  max-width: 520px;
+  margin-left: 330px;
+  
+}
+
+
+.home-info {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  
+}
+
+
+.weather-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  width: 200px;
+  height: 350px; 
+  margin-left: 750px;
+  top: -50px;
+  
+}
+.map-card
+{
+ background: rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  width: 200px;
+  height: 350px; /* optional: set height so both cards match */
+  top: -50px;
+  
+}
+
+
+.map-card img,
+.weather-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+  
+}
+
+
+.map-card {
+  width: 200px;
+  height: 300px;
+  border-radius: 20px;
+  background: url('WhatsApp\ Image\ 2026-02-07\ at\ 3.44.53\ PM.jpeg') center/cover;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+ .weather-card
+ {
+     width: 200px;
+  height: 300px;
+  border-radius: 20px;
+  background: url('weather.jpeg') center/cover;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+ }
+
+.map-card:hover , .weather-card:hover {
+  transform: translateY(-10px);
+}
+
+.card-content {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  padding: 5px;
+  color: rgb(0, 0, 0);
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  border-top: 1px solid rgba(255,255,255,0.3);
+}
+
+.map-btn {
+  background: #0071ff; /* Moroccan Blue */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.hero-center-content {
+  position: absolute;
+  top: 60%;              /* adjust if needed */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  pointer-events: none;  /* prevents blocking buttons */
+}
+
+
+.typing-container {
+  display: flex;
+  justify-content: center;
+}
+
+.handwritten-quote {
+  font-family: 'Caveat', cursive;
+  font-size: 3.5rem;
+  background: linear-gradient(180deg, #00d4ff, #ffffff, #1252b3);
+
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+  overflow: hidden; 
+  
+  white-space: nowrap; 
+  letter-spacing: 2px;
+  animation: 
+    typing 3.5s steps(30, end), 
+    blink-caret 0.75s step-end infinite;
+}
+
+/* The "Typewriter" effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 32ch; }
+}
+
+
+#activities
+{
+    height: 80vh;
+    scroll-margin-top: 100px;
+}
+#activities h3
+{
+    margin-bottom: 20px;
+    color: whitesmoke;
+    margin-left: 10px;
+    margin-top: 20px;
+
+}
+
+.spots, .akchour {
+  display: flex;
+  gap: 20px;              /* space between images */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;      /* keep them in one line */
+}
+
+.spot img {
+  width: 220px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.spot img:hover {
+  transform: scale(1.05);
+}
+
+
+#hotels,#restaurant {
+  padding: 60px 80px;
+}
+
+#hotels h2,#restaurant h2,#gallery h2, #activities h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.hotels-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.hotel-card {
+  background: rgba(255, 255, 255, 0.534);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.hotel-card:hover {
+  transform: translateY(-8px);
+  
+}
+.hotel-card::before {
+  content: "";
+  position: absolute;
+  inset: 1;
+  background: rgb(158, 3, 3); /* change color here */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+/* show overlay on hover */
+
+.hotel-card:hover::before {
+  opacity: 1;
+}
+
+.hotel-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  position: relative;
+}
+
+.hotel-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hotel-info {
+  padding: 16px;
+  text-align: center;
+}
+
+.hotel-info h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.price {
+  margin-top: 8px;
+  font-weight: bold;
+  color: #2c2c2c;
+}
+
+.reserve-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 26px;
+  background: linear-gradient(135deg, #436ee6, #0d22db);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(26, 139, 244, 0.35);
+}
+
+.reserve-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px  rgba(26, 139, 244, 0.35);
+  background: linear-gradient(135deg, #0d22db, #436ee6);
+}
+
+.reserve-btn:active {
+  transform: scale(0.97);
+}
+
+
+.heart {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #000000;
+  transition: color 0.3s ease, transform 0.2s;
+}
+.fa-regular
+{
+ background-color: rgba(255, 255, 255, 0.363);
+  border-radius: 25px;
+  padding: 5px 3px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+}
+
+/* hide checkbox */
+.fav-checkbox {
+  display: none;
+}
+
+/* when clicked → red heart */
+.fav-checkbox:checked + .heart {
+  color: red;
+  transform: scale(1.1);
+}
+
+#gallery {
+  padding: 60px 80px;
+  margin-top: 60px;
+}
+
+
+
+.gallery-grid {
+  column-count: 4;
+  column-gap: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+
+
+/* MOBILE  */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  .menu-toggle {
+    display: flex !important;
+  }
+
+  .navbar
+  {
+    border-radius: 0;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(114, 103, 214, 0.685);
+    width: 40%;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+    z-index: 100;
+  }
+
+  .nav-links.active
+ {
+    display: flex;
+  }
+
+  /* Home */
+  #home {
+  height: auto;
+  }
+
+  .home-text h1 {
+    font-size: 1.1rem;
+    grid-template-columns: 1fr max-content 1fr;
+  }
+
+  .home-text p {
+   display: none;
+  }
+
+  .home-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .map-card,
+  .weather-card {
+    width: 100%;
+    max-width: 320px;
+    height: 220px;
+    margin: 0;
+    top: auto;
+  }
+
+  .hero-center-content 
+  {
+    
+    position: relative;
+    bottom: 32rem;
+    
+  }
+
+  .handwritten-quote {
+    font-size: 1.3rem;
+    white-space: normal;
+    overflow: visible;
+    animation: none; 
+  }
+
+ 
+  #activities {
+    padding: 50px 15px;
+    height: auto;
+  }
+
+ 
+
+  .activity {
+    
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+
+ 
+
+  .content {
+    width: 100%;
+    padding: 10px 0;
+  }
+  
+
+  .image {
+    width: 170px;
+    height: 170px;
+    margin: 25px 15px;
+    
+  }
+
+
+  #hotels, #restaurant {
+    padding: 40px 15px;
+    height: auto;
+  }
+
+  .hotels-grid {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 15px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hotels-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hotel-card {
+    min-width: 220px;
+    max-width: 220px;
+    flex-shrink: 0;
+  }
+
+  .hotel-card {
+    position: relative;
+    overflow: visible;  
+  }
+
+  .heart {
+    top: 10px;
+    right: 10px;
+    font-size: 24px;   
+    z-index: 5;
+  }
+
+
+
+  #gallery {
+    padding: 40px 15px;
+  }
+
+  .gallery-grid {
+    column-count: unset;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 15px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .gallery-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-grid img {
+    min-width: 200px;
+    max-width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+}
